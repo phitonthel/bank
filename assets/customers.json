@@ -1,0 +1,162 @@
+[
+  {
+    "identityNumber": 1,
+    "fullName": "Wendy Wendy",
+    "address": "Sukasuka, RT 55, RW 783",
+    "birthDate": "1973-11-3",
+    "accountNumber": 573368837,
+    "gender": "Male"
+  },
+  {
+    "identityNumber": 2,
+    "fullName": "Sari Afifah",
+    "address": "Sukamaju, RT 415, RW 190",
+    "birthDate": "1968-3-5",
+    "accountNumber": 331638248,
+    "gender": "Female"
+  },
+  {
+    "identityNumber": 3,
+    "fullName": "Nadia Sari",
+    "address": "Sukaharjo, RT 746, RW 155",
+    "birthDate": "1975-5-25",
+    "accountNumber": 594374196,
+    "gender": "Female"
+  },
+  {
+    "identityNumber": 4,
+    "fullName": "Stefani Stefani",
+    "address": "Sukamundur, RT 111, RW 607",
+    "birthDate": "1966-11-24",
+    "accountNumber": 965332980,
+    "gender": "Female"
+  },
+  {
+    "identityNumber": 5,
+    "fullName": "Sari Afifah",
+    "address": "Sukaharjo, RT 567, RW 333",
+    "birthDate": "1962-9-7",
+    "accountNumber": 263344861,
+    "gender": "Female"
+  },
+  {
+    "identityNumber": 6,
+    "fullName": "Isro Satriya",
+    "address": "Sukamaju, RT 209, RW 363",
+    "birthDate": "1970-5-21",
+    "accountNumber": 156105038,
+    "gender": "Male"
+  },
+  {
+    "identityNumber": 7,
+    "fullName": "Agung Delphito",
+    "address": "Sukasuka, RT 52, RW 280",
+    "birthDate": "1971-6-7",
+    "accountNumber": 64798033,
+    "gender": "Male"
+  },
+  {
+    "identityNumber": 8,
+    "fullName": "Stefani Afifah",
+    "address": "Sukamaju, RT 231, RW 196",
+    "birthDate": "1959-11-9",
+    "accountNumber": 327894073,
+    "gender": "Female"
+  },
+  {
+    "identityNumber": 9,
+    "fullName": "Devita Nadia",
+    "address": "Sukamundur, RT 851, RW 88",
+    "birthDate": "1956-2-7",
+    "accountNumber": 975714313,
+    "gender": "Female"
+  },
+  {
+    "identityNumber": 10,
+    "fullName": "Isro Kemal",
+    "address": "Sukamundur, RT 354, RW 941",
+    "birthDate": "1966-5-18",
+    "accountNumber": 729133160,
+    "gender": "Male"
+  },
+  {
+    "identityNumber": 11,
+    "fullName": "Delphito Hifzhan",
+    "address": "Sukarejo, RT 918, RW 934",
+    "birthDate": "1951-1-12",
+    "accountNumber": 758332688,
+    "gender": "Male"
+  },
+  {
+    "identityNumber": 12,
+    "fullName": "Riantini Ayu",
+    "address": "Sukasuka, RT 883, RW 514",
+    "birthDate": "1951-6-18",
+    "accountNumber": 983021152,
+    "gender": "Female"
+  },
+  {
+    "identityNumber": 13,
+    "fullName": "Satriya Isro",
+    "address": "Sukamundur, RT 509, RW 294",
+    "birthDate": "1974-4-18",
+    "accountNumber": 351350079,
+    "gender": "Male"
+  },
+  {
+    "identityNumber": 14,
+    "fullName": "Wendy Hifzhan",
+    "address": "Sukasuka, RT 831, RW 294",
+    "birthDate": "1961-12-18",
+    "accountNumber": 63309584,
+    "gender": "Male"
+  },
+  {
+    "identityNumber": 15,
+    "fullName": "Hifzhan Wendy",
+    "address": "Sukamundur, RT 662, RW 20",
+    "birthDate": "1970-10-19",
+    "accountNumber": 368366141,
+    "gender": "Male"
+  },
+  {
+    "identityNumber": 16,
+    "fullName": "Kwan Sari",
+    "address": "Sukamundur, RT 99, RW 568",
+    "birthDate": "1952-1-13",
+    "accountNumber": 195856130,
+    "gender": "Female"
+  },
+  {
+    "identityNumber": 17,
+    "fullName": "Taufiq Isro",
+    "address": "Sukasuka, RT 287, RW 682",
+    "birthDate": "1953-7-24",
+    "accountNumber": 249786317,
+    "gender": "Male"
+  },
+  {
+    "identityNumber": 18,
+    "fullName": "Stefani Afifah",
+    "address": "Sukaharjo, RT 280, RW 696",
+    "birthDate": "1971-10-20",
+    "accountNumber": 523296115,
+    "gender": "Female"
+  },
+  {
+    "identityNumber": 19,
+    "fullName": "Isro Bartolomeus",
+    "address": "Sukamaju, RT 187, RW 868",
+    "birthDate": "1968-11-27",
+    "accountNumber": 196825637,
+    "gender": "Male"
+  },
+  {
+    "identityNumber": 20,
+    "fullName": "Kemal Kemal",
+    "address": "Sukamundur, RT 970, RW 741",
+    "birthDate": "1964-8-20",
+    "accountNumber": 360831298,
+    "gender": "Male"
+  }
+]

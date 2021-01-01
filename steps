@@ -1,0 +1,5 @@
+sequelize model:generate --name Customer --attributes identityNumber:string,fullName:string,address:string,birthDate:date,account:string,gender:string
+
+sequelize model:generate --name Account --attributes type:string,balance:string
+
+sequelize migration:generate --name addColumnToAccountNamedCustomerId
