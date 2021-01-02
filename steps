@@ -8,3 +8,5 @@ sequelize migration:generate --name addColumnToAccountNamedCustomerId
 sequelize migration:generate --name changeBalanceToFloat
 sequelize migration:generate --name addAccountNumberToAccount
 sequelize migration:generate --name deleteAccountNumberFromCustomer
+
+#seed

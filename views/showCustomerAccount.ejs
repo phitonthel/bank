@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+  <%- include('./partials/navbar.ejs') %>
+  <h1><%=data.fullName%></h1>
+
+  <a href="/customers/<%= data.id %>/addAccounts%>">Add Account</a>
+  <table border="1">
+    <thead>
+      <tr>
+        <th> no </th>
+        <th> type </th>
+        <th> balance </th>
+        <th> accountNumber </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.Accounts.forEach((element, index) => { %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= element.type %></td>
+          <td><%= element.balance %></td>
+          <td><%= element.accountNumber %></td>
+        </tr>
+      <% }) %>
+
+    </tbody>
+  </table>
+</body>
+</html>

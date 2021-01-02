@@ -38,10 +38,8 @@ class Controller {
     let id = +req.params.idCustomer
     Customer.findByPk(id)
     .then((data) => {
-      // data.birthDate = data.birthDate.toString()
       let newDate = data.birthDate.toISOString().slice(0,10);
       data.dataValues.birthDate = newDate
-      // console.log(data);
       res.render('editCustomers', {data})
     })
     .catch((err) => {
@@ -63,7 +61,44 @@ class Controller {
   }
 
   static showCustomerAccount(req, res) {
+    let id = req.params.idCustomer
+    Customer.findByPk(id, {
+      include: Account,
+      where:{CustomerId:id}
+    })
+    .then((data) => {
+      res.render('showCustomerAccount', {data})
+    })
+    .catch((err) => {
+      res.send(err)
+    })
+  }
 
+  static addAccount(req, res) {
+    let id = req.params.idCustomer
+    Customer.findByPk(id)
+    .then((data) => {
+      res.render('addAccountToCustomer', {data})
+    })
+    .catch((err) => {
+      res.send(err)
+    })
+  }
+
+  static addAccountPOST(req, res) {
+    let id = req.params.idCustomer
+    let input = req.body
+    
+    //add reference
+    input.CustomerId = id
+
+    Account.create(input)
+    .then(() => {
+      res.redirect(`/customers/${id}/accounts`)
+    })
+    .catch((err) => {
+      res.send(err)
+    })
   }
 
   static transfer(req, res) {

@@ -12,6 +12,9 @@ router.get('/customers/:idCustomer/editProfile', Controller.editCustomer)
 router.post('/customers/:idCustomer/editProfile', Controller.editCustomerPOST)
 
 router.get('/customers/:idCustomer/accounts', Controller.showCustomerAccount)
+router.get('/customers/:idCustomer/addAccounts', Controller.addAccount)
+router.post('/customers/:idCustomer/addAccounts', Controller.addAccountPOST)
+
 router.get('/customers/:idCustomer/accounts/:idAccount/transfer', Controller.transfer)
 
 
