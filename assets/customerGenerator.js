@@ -42,14 +42,13 @@ for (let i = 0; i < num ; i++) {
   let birthDate = `${year}-${month}-${date}`
 
   //account number
-  let accountNumber = (Math.ceil(Math.random()*1000000000))
+  // let accountNumber = (Math.ceil(Math.random()*1000000000))
   
   let obj = {
     identityNumber: i+1,
     fullName: firstName + ' ' + lastName,
     address: address,
     birthDate: birthDate,
-    accountNumber: accountNumber,
     gender: gender
   }
   output.push(obj)
