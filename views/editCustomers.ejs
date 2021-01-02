@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit</title>
+</head>
+<body>
+  <%- include('./partials/navbar.ejs') %>
+  <h1>Edit Customer</h1>
+  <h2> <%= data.fullName %> </h2>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th> ID </th>
+        <th> identityNumber </th>
+        <th> fullName </th>
+        <th> address</th>
+        <th> birthDate </th>
+        <th> gender </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= data.id %></td>
+        <td><%= data.identityNumber %></td>
+        <td><%= data.fullName %></td>
+        <td><%= data.address %></td>
+        <td><%= data.birthDate %></td>
+        <td><%= data.gender %></td>
+      </tr>
+    </tbody>
+  </table>
+
+<h2> Fill the form below to edit the above customer:</h2>
+<form method="POST" action="/customers/<%=data.id%>/editProfile">
+  <div>
+    <label for="identityNumber"> identityNumber</label>
+    <input type="text" name="identityNumber" id="identityNumber" value="<%= data.identityNumber %>">
+  </div>
+  <div>
+    <label for="fullName"> fullName </label>
+    <input type="text" name="fullName" id="fullName" value="<%= data.fullName %>">
+  </div>
+  <div>
+    <label for="address"> address </label>
+    <input type="text" name="address" id="address" value="<%= data.address %>">
+  </div>
+  <div>
+    <label for="birthDate"> birthDate </label>
+    <input type="date" name="birthDate" id="birthDate" value="<%= data.birthDate %>">
+  </div>
+  <div>
+    <% if (data.gender == "Male") { %>
+      <input type="radio" id="male" name="gender" value="Male" checked>
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="Female">
+      <label for="female">Female</label><br>
+    <% } else { %>
+      <input type="radio" id="male" name="gender" value="Male">
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="Female" checked>
+      <label for="female">Female</label><br>
+    <% } %>
+  </div>
+  <button type="submit"> Edit </button>
+</form>
+
+</body>
+</html> 
