@@ -6,7 +6,9 @@
   <title>Transfer</title>
 </head>
 <body>
-  <h3>Transfer from: </h3>
+  <% let singleAccount = dataAccount.filter((element) => element.id == idAccount) %>
+  <% singleAccount = singleAccount[0] %>
+  <h3>Transfer from: <%= singleAccount.accountNumber %> - <%= singleAccount.type %> - <%= singleAccount.balance %></h3>
   
 </body>
 </html>

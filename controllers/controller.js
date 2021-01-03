@@ -113,7 +113,7 @@ class Controller {
     })
     .then((data) => {
       dataCustomer = data
-      res.send(dataAccount)
+      res.render('transfer', {dataAccount, dataCustomer, idAccount, idCustomer})
     })
     .catch((err) => {
       res.send(err)
