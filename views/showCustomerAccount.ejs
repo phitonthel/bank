@@ -17,6 +17,7 @@
         <th> type </th>
         <th> balance </th>
         <th> accountNumber </th>
+        <th> action </th>
       </tr>
     </thead>
     <tbody>
@@ -27,6 +28,7 @@
           <td><%= element.type %></td>
           <td><%= numFormatted %></td>
           <td><%= element.accountNumber %></td>
+          <td><a href="/customers/<%= data.id %>/accounts/<%=element.id%>/transfer">transfer</a></td>
         </tr>
       <% }) %>
 

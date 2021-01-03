@@ -102,7 +102,22 @@ class Controller {
   }
 
   static transfer(req, res) {
+    let idCustomer = req.params.idCustomer
+    let idAccount = req.params.idAccount
+    let dataAccount, dataCustomer
 
+    Account.findAll()
+    .then((data) => {
+      dataAccount = data
+      return Customer.findByPk(idCustomer)
+    })
+    .then((data) => {
+      dataCustomer = data
+      res.send(dataAccount)
+    })
+    .catch((err) => {
+      res.send(err)
+    })
   }
 }
 
