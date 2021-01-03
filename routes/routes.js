@@ -16,6 +16,7 @@ router.get('/customers/:idCustomer/addAccounts', Controller.addAccount)
 router.post('/customers/:idCustomer/addAccounts', Controller.addAccountPOST)
 
 router.get('/customers/:idCustomer/accounts/:idAccount/transfer', Controller.transfer)
+router.post('/customers/:idCustomer/accounts/:idAccount/transfer', Controller.transferPOST)
 
 
 

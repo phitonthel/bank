@@ -106,14 +106,47 @@ class Controller {
     let idAccount = req.params.idAccount
     let dataAccount, dataCustomer
 
-    Account.findAll()
+    Account.findAll({
+      include: [Customer]
+    })
     .then((data) => {
       dataAccount = data
+      // res.send(dataAccount[0].Customer.fullName)
       return Customer.findByPk(idCustomer)
     })
     .then((data) => {
       dataCustomer = data
       res.render('transfer', {dataAccount, dataCustomer, idAccount, idCustomer})
+    })
+    .catch((err) => {
+      res.send(err)
+    })
+  }
+
+  static transferPOST(req, res) {
+    let idAccount = req.params.idAccount //id account that transfers
+    let idCustomer = req.params.idCustomer //id customer that transfers
+    let input = req.body //amount, idAccountThatIsTransfered
+
+    let accountTransfer, accountReceive
+    
+    Account.findByPk(idAccount)
+    .then((data) => {
+      accountTransfer = data
+      return Account.findByPk(input.idAccountThatIsTransfered)
+    })
+    .then((data) => {
+      accountReceive = data
+      //transfer process
+      accountTransfer.balance -= input.amount
+      accountReceive.balance += input.amount
+      return Account.update(accountTransfer, {where:{id: idAccount}})
+    })
+    .then (() => {
+      return Account.update(accountReceive, {where:{id: input.idAccountThatIsTransfered}})
+    })
+    .then(() => {
+      res.redirect('/customers')
     })
     .catch((err) => {
       res.send(err)
