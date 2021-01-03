@@ -124,28 +124,32 @@ class Controller {
   }
 
   static transferPOST(req, res) {
-    let idAccount = req.params.idAccount //id account that transfers
-    let idCustomer = req.params.idCustomer //id customer that transfers
+    let idAccount = +req.params.idAccount //id account that transfers
+    let idCustomer = +req.params.idCustomer //id customer that transfers
+
     let input = req.body //amount, idAccountThatIsTransfered
+    let amount = +req.body.amount
+    let idAccountThatIsTransfered = +input.idAccountThatIsTransfered
 
     let accountTransfer, accountReceive
     
     Account.findByPk(idAccount)
     .then((data) => {
       accountTransfer = data
-      return Account.findByPk(input.idAccountThatIsTransfered)
+      return Account.findByPk(idAccountThatIsTransfered)
     })
     .then((data) => {
       accountReceive = data
       //transfer process
-      accountTransfer.balance -= input.amount
-      accountReceive.balance += input.amount
-      return Account.update(accountTransfer, {where:{id: idAccount}})
+      accountTransfer.balance -= amount
+      accountReceive.balance += amount
+      return Account.update({balance: accountTransfer.balance}, {where:{id: idAccount}})
     })
     .then (() => {
-      return Account.update(accountReceive, {where:{id: input.idAccountThatIsTransfered}})
+      return Account.update({balance:accountReceive.balance}, {where:{id:idAccountThatIsTransfered}})
     })
     .then(() => {
+      res.send([accountTransfer, accountReceive, idAccount,idAccountThatIsTransfered])
       res.redirect('/customers')
     })
     .catch((err) => {
