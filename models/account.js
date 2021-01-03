@@ -16,7 +16,17 @@ module.exports = (sequelize, DataTypes) => {
   };
   Account.init({
     type: DataTypes.STRING,
-    balance: DataTypes.FLOAT,
+    balance: {
+      type:DataTypes.FLOAT,
+      validate: {
+        // Custom validators:
+        isMinimum(value) {
+          if (value && value < 500000) {
+            throw new Error('Minimum balance for new Accout: Rp500.000');
+          }
+        }
+      }
+    },
     accountNumber: DataTypes.STRING,
     CustomerId: DataTypes.INTEGER
   }, {
@@ -27,7 +37,10 @@ module.exports = (sequelize, DataTypes) => {
         if(!instance.accountNumber) {
           instance.accountNumber = (Math.floor(Math.random()*10000000000))
         }
-      }
+        if(!instance.balance) {
+          instance.balance = 500000
+        }
+      },
     }
   });
   return Account;

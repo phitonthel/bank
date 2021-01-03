@@ -21,10 +21,11 @@
     </thead>
     <tbody>
       <% data.Accounts.forEach((element, index) => { %>
+        <% let numFormatted = element.balance.toLocaleString('en-ID', {style: 'currency', currency: 'IDR'}); %>
         <tr>
           <td><%= index+1 %></td>
           <td><%= element.type %></td>
-          <td><%= element.balance %></td>
+          <td><%= numFormatted %></td>
           <td><%= element.accountNumber %></td>
         </tr>
       <% }) %>
