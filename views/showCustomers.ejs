@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+  <%- include('./partials/navbar.ejs') %>
+  <h1>Customers Data</h1>
+  <table border="1">
+      <thead>
+          <tr>
+              <th> ID </th>
+              <th> Identity Number </th>
+              <th> Full Name </th>
+              <th> Address </th>
+              <th> Birth Date </th>
+              <th> Gender </th>
+              <th> Actions </th>
+          </tr>
+      </thead>
+
+      <tbody>
+        <% data.forEach((element) => { %>
+          <tr>
+            <td> <%= element.id %> </td>
+            <td> <%= element.identityNumber %> </td>
+            <td> <%= element.fullName %> </td>
+            <td> <%= element.address %> </td>
+            <td> <%= element.birthDate %> </td>
+            <td> <%= element.gender %> </td>
+            <td>
+              <a href="/customers/<%= element.id %>/editProfile">Edit</a>
+              <a href="/customers/<%=element.id%>/accounts">View</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+  </table>
+</body>
+</html>

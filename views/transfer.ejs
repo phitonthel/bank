@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transfer</title>
+</head>
+<body>
+  <% let singleAccount = dataAccount.filter((element) => element.id == idAccount) %>
+  <% singleAccount = singleAccount[0] %>
+  <h3>Transfer from: <%= singleAccount.accountNumber %> - <%= singleAccount.type %> - <%= singleAccount.balance %></h3>
+
+  <form action="/customers/<%=idCustomer%>/accounts/<%=idAccount%>/transfer" method="POST">
+    <input type="number" name="amount" placeholder="Amount">
+
+    <label for="idAccountThatIsTransfered">Transfer to:</label>
+    <select name="idAccountThatIsTransfered" id="idAccountThatIsTransfered">
+      <% dataAccount.forEach((element) => { %>
+        <option value="<%=element.id%>"><%=element.accountNumber%> - <%=element.Customer%></option>
+      <% }) %>
+    </select> 
+    <button type="submit">Transfer</button>
+  </form>
+</body>
+</html>

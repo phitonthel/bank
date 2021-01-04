@@ -3,3 +3,10 @@ sequelize model:generate --name Customer --attributes identityNumber:string,full
 sequelize model:generate --name Account --attributes type:string,balance:string
 
 sequelize migration:generate --name addColumnToAccountNamedCustomerId
+
+# release 2: change the data types by migrating
+sequelize migration:generate --name changeBalanceToFloat
+sequelize migration:generate --name addAccountNumberToAccount
+sequelize migration:generate --name deleteAccountNumberFromCustomer
+
+#seed

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Account to Customer</title>
+</head>
+<body>
+  <%- include('./partials/navbar.ejs') %>
+  <h1>Add Account</h1>
+  <h2>Customer's Name: <%= data.fullName %></h2>
+  <form method="POST" action="/customers/<%= data.id %>/addAccounts%>">
+
+    <div>
+      <label for="type">Choose a Type:</label>
+      <select name="type" id="type">
+        <option value="On Account">On Account</option>
+        <option value="Xtra Payroll">Xtra Payroll</option>
+        <option value="Tabunganku">Tabunganku</option>
+      </select>
+    </div>
+    <div>
+      <label for="balance">Insert Balance</label>
+      <input type="number" name="balance" id="balance">
+    </div>
+    
+    <button type="submit"> Add </button>
+  </form>
+  
+</body>
+</html>

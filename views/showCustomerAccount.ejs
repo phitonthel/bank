@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+  <%- include('./partials/navbar.ejs') %>
+  <h1><%=data.fullName%></h1>
+
+  <a href="/customers/<%= data.id %>/addAccounts%>">Add Account</a>
+  <table border="1">
+    <thead>
+      <tr>
+        <th> no </th>
+        <th> type </th>
+        <th> balance </th>
+        <th> accountNumber </th>
+        <th> action </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.Accounts.forEach((element, index) => { %>
+        <% let numFormatted = element.balance.toLocaleString('en-ID', {style: 'currency', currency: 'IDR'}); %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= element.type %></td>
+          <td><%= numFormatted %></td>
+          <td><%= element.accountNumber %></td>
+          <td><a href="/customers/<%= data.id %>/accounts/<%=element.id%>/transfer">transfer</a></td>
+        </tr>
+      <% }) %>
+
+    </tbody>
+  </table>
+</body>
+</html>

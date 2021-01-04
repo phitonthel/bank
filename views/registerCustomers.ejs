@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Customers</title>
+</head>
+<body>
+  <%- include('./partials/navbar.ejs') %>
+  <h1> Register Customer </h1>
+  <form method="POST" action="/customers/register">
+    <div>
+      <label for="identityNumber">identityNumber</label>
+      <input type="text" name="identityNumber" id="identityNumber" placeholder="ex: 21EBY">
+    </div>
+    <div>
+      <label for="fullName">fullName</label>
+      <input type="text" name="fullName" id="fullName" placeholder="ex: John Doe">
+    </div>
+    <div>
+      <label for="address">address</label>
+      <input type="text" name="address" id="address" placeholder="ex: Sukamundur, RT 10, RW 20">
+    </div>
+    <div>
+      <label for="birthDate">birthDate</label>
+      <input type="date" name="birthDate" id="birthDate" value="2000-01-01">
+    </div>
+    <div>
+      <input type="radio" id="male" name="gender" value="Male">
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="Female">
+      <label for="female">Female</label><br>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+  
+</body>
+</html>
